@@ -8,7 +8,21 @@ config.default_prog = {
 	"-Command",
 	"cd ~; . 'C:/Users/r.moshrefi/Documents/WindowsPowerShell/Microsoft.Powershell_profile.ps1'",
 }
+-- Font
+config.font = wezterm.font_with_fallback({
+  { family = "DejaVuSansM Nerd Font Mono" },
+  { 
+    family = "Vazirmatn",
+    harfbuzz_features = { "calt=1", "clig=1", "liga=1", "join=1" },
+  },
+})
+config.allow_square_glyphs_to_overflow_width = "WhenFollowedBySpace"
+config.font_size = 11.6
+config.use_ime = false
 
+-- BiDi (Farsi/RTL support)
+config.bidi_enabled = true
+config.bidi_direction = "AutoLeftToRight"
 -- Window
 config.initial_rows = 50
 config.initial_cols = 220
@@ -16,7 +30,7 @@ config.window_decorations = "RESIZE"
 config.window_padding = { left = 10, right = 10, top = 50, bottom = 10 }
 
 -- Font
-config.font = wezterm.font("DejaVuSansM Nerd Font Mono")
+-- config.font = wezterm.font("DejaVuSansM Nerd Font Mono")
 config.font_size = 11.6
 
 -- Cursor
